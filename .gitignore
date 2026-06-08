@@ -1,0 +1,7 @@
+*.pkl
+*.csv
+*.png
+
+!fashion_mnist/*.pkl
+!fashion_mnist/*.csv
+!fashion_mnist/*.png
