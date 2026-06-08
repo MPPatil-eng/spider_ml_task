@@ -22,8 +22,8 @@ transform = transforms.Compose([
     transforms.Normalize((0.2860,), (0.3530,))
 ])
 
-full_train = torchvision.datasets.FashionMNIST(root="./data", train=True,  download=True, transform=transform)
-test_data  = torchvision.datasets.FashionMNIST(root="./data", train=False, download=True, transform=transform)
+full_train = torchvision.datasets.FashionMNIST(root="./fashion_mnist/data", train=True,  download=True, transform=transform)
+test_data  = torchvision.datasets.FashionMNIST(root="./fashion_mnist/data", train=False, download=True, transform=transform)
 
 # Split 60000 training samples into 54000 train / 6000 val
 train_data, val_data = random_split(full_train, [54000, 6000])
@@ -138,8 +138,8 @@ LATENT_DIM = 32
 
 # No normalisation — Sigmoid output needs pixels in [0,1]
 ae_transform = transforms.Compose([transforms.ToTensor()])
-ae_train = torchvision.datasets.FashionMNIST(root="./data", train=True,  download=False, transform=ae_transform)
-ae_test  = torchvision.datasets.FashionMNIST(root="./data", train=False, download=False, transform=ae_transform)
+ae_train = torchvision.datasets.FashionMNIST(root="./fashion_mnist/data", train=True,  download=False, transform=ae_transform)
+ae_test  = torchvision.datasets.FashionMNIST(root="./fashion_mnist/data", train=False, download=False, transform=ae_transform)
 ae_train_loader = DataLoader(ae_train, batch_size=128, shuffle=True)
 ae_test_loader  = DataLoader(ae_test,  batch_size=128, shuffle=False)
 
